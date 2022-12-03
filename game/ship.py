@@ -1,6 +1,6 @@
 from laser import Laser
+from constants import *
 
-WIDTH, HEIGHT = 750, 750
 
 class Ship:
     COOLDOWN = 30

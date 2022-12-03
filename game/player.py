@@ -4,8 +4,8 @@ from ship import Ship
 
 WIDTH, HEIGHT = 750, 750
 
-YELLOW_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_yellow.png"))
-YELLOW_LASER = pygame.image.load(os.path.join("assets", "pixel_laser_yellow.png"))
+YELLOW_SPACE_SHIP = pygame.image.load(os.path.join("assets", "marvin_robot.png"))
+YELLOW_LASER = pygame.image.load(os.path.join("assets", "yellow_ball.png"))
 
 class Player(Ship):
     def __init__(self, x, y, health=100):
