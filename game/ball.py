@@ -1,6 +1,6 @@
 import pygame
 
-class Laser:
+class Ball:
     def __init__(self, x, y, img):
         self.x = x
         self.y = y

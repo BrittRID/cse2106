@@ -1,13 +1,12 @@
 import pygame
-import os
-import time
+# import os
+# import time
 import random
 from enemy import Enemy
 from player import Player
 from constants import *
 
 pygame.font.init()
-
 
 
 def collide(obj1, obj2):
@@ -28,7 +27,7 @@ def main():
     enemy_vel = 1
 
     player_vel = 5
-    laser_vel = 5
+    ball_vel = 5
 
     player = Player(300, 630)
 
@@ -38,7 +37,8 @@ def main():
     lost_count = 0
 
     def redraw_window():
-        WIN.blit(BG, (0,0))
+        # WIN.blit(BG, (0,0))
+        WIN.blit(BG_1, (0,0))
         # draw text
         lives_label = main_font.render(f"Lives: {lives}", 1, (255,255,255))
         level_label = main_font.render(f"Level: {level}", 1, (255,255,255))
@@ -75,7 +75,7 @@ def main():
             level += 1
             wave_length += 5
             for i in range(wave_length):
-                enemy = Enemy(random.randrange(50, WIDTH-100), random.randrange(-1500, -100), random.choice(["red", "blue", "green"]))
+                enemy = Enemy(random.randrange(50, WIDTH-100), random.randrange(-1500, -100), random.choice(["red", "blue", "green", "yellow"]))
                 enemies.append(enemy)
 
         for event in pygame.event.get():
@@ -96,7 +96,7 @@ def main():
 
         for enemy in enemies[:]:
             enemy.move(enemy_vel)
-            enemy.move_lasers(laser_vel, player)
+            enemy.move_balls(ball_vel, player)
 
             if random.randrange(0, 2*60) == 1:
                 enemy.shoot()
@@ -108,14 +108,14 @@ def main():
                 lives -= 1
                 enemies.remove(enemy)
 
-        player.move_lasers(-laser_vel, enemies)
+        player.move_balls(-ball_vel, enemies)
 
 def main_menu():
     title_font = pygame.font.SysFont("lucidaconsole", 40)
     run = True
     while run:
-        WIN.blit(BG, (0,0))
-        title_label = title_font.render("Press mouse button to begin...", 1, (255,255,255))
+        WIN.blit(BG_1, (0,0))
+        title_label = title_font.render("Left click to begin...", 1, (255,255,255))
         WIN.blit(title_label, (WIDTH/2 - title_label.get_width()/2, 350))
         pygame.display.update()
         for event in pygame.event.get():
