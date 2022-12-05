@@ -46,8 +46,19 @@ def main():
     lost_count = 0
 
     def redraw_window():
-        # WIN.blit(BG, (0,0))
-        WIN.blit(BG_1, (0, 0))
+        if level == 0:
+            WIN.blit(BG_0, (0, 0))
+        elif level == 1:
+            WIN.blit(BG_1, (0, 0))
+        elif level == 2:
+            WIN.blit(BG_2, (0, 0))
+        elif level == 3:
+            WIN.blit(BG_3, (0, 0))
+        elif level == 4:
+            WIN.blit(BG_4, (0, 0))
+        elif level > 4:
+            WIN.blit(BG_5, (0, 0))
+
         # draw text
         lives_label = main_font.render(f"Lives: {lives}", 1, (255, 255, 255))
         level_label = main_font.render(f"Level: {level}", 1, (255, 255, 255))
