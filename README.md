@@ -17,9 +17,10 @@ project folder. Select the main module inside the dice folder and click the "run
 The project files and folders are organized as follows:
 ```
 root                    (project root folder)
-+-- Robot Invasion                (source code for game)
++-- Robot Invasion      (source code for game)
   +-- game              (specific classes)
-  +-- __main__.py       (program entry point)
+     +-- __main__.py    (program entry point)
+  +-- assets             (images and sounds for game)
 +-- README.md           (general info)
 ```
 
