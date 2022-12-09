@@ -7,7 +7,6 @@ pygame.display.set_caption("Robot Invasion")
 
 # Backgrounds
 BG_0 = pygame.transform.scale(pygame.image.load(os.path.join("assets", "bg_earth.png")), (WIDTH, HEIGHT))
-# print("Why")
 BG_1 = pygame.transform.scale(pygame.image.load(os.path.join("assets", "bg_road.png")), (WIDTH, HEIGHT))
 BG_2 = pygame.transform.scale(pygame.image.load(os.path.join("assets", "bg_city.png")), (WIDTH, HEIGHT))
 BG_3 = pygame.transform.scale(pygame.image.load(os.path.join("assets", "bg_rocket.png")), (WIDTH, HEIGHT))

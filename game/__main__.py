@@ -64,8 +64,8 @@ def main():
             WIN.blit(BG_5, (0, 0))
 
         # draw text
-        lives_label = main_font.render(f"Lives: {lives}", 1, (255, 255, 255))
-        level_label = main_font.render(f"Level: {level}", 1, (255, 255, 255))
+        lives_label = main_font.render(f"Lives: {lives}", 1, (0, 255, 0))
+        level_label = main_font.render(f"Level: {level}", 1, (255, 0, 0))
 
         WIN.blit(lives_label, (10, 10))
         WIN.blit(level_label, (WIDTH - level_label.get_width() - 10, 10))
@@ -76,7 +76,7 @@ def main():
         player.draw(WIN)
 
         if lost:
-            lost_label = lost_font.render("You Lost!!", 1, (255, 255, 255))
+            lost_label = lost_font.render("You Lost!!", 1, (255, 0, 0))
             WIN.blit(lost_label, (WIDTH/2 - lost_label.get_width()/2, 350))
 
         pygame.display.update()
@@ -148,8 +148,8 @@ def main_menu():
     while run:
         WIN.blit(BG_1, (0, 0))
         title_label = title_font.render(
-            "Left click to begin...", 1, (255, 255, 255))
-        WIN.blit(title_label, (WIDTH/2 - title_label.get_width()/2, 350))
+            "Left click to begin...", 1, (255, 0, 0))
+        WIN.blit(title_label, (WIDTH/2 - title_label.get_width()/2, 300))
         pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
