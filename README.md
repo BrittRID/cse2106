@@ -20,7 +20,7 @@ root                    (project root folder)
 +-- Robot Invasion      (source code for game)
   +-- game              (specific classes)
      +-- __main__.py    (program entry point)
-  +-- assets             (images and sounds for game)
+  +-- assets            (images and sounds for game)
 +-- README.md           (general info)
 ```
 
