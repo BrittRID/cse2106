@@ -3,6 +3,7 @@ import random
 from enemy import Enemy
 from player import Player
 from constants import *
+from sound_service import sound_service
 
 pygame.font.init()
 
@@ -39,6 +40,9 @@ def main():
     ball_vel = 5
 
     player = Player(300, 630)
+
+    sound = sound_service()
+    sound.background_sound()
 
     clock = pygame.time.Clock()
 
@@ -125,9 +129,13 @@ def main():
             if collide(enemy, player):
                 player.health -= 10
                 enemies.remove(enemy)
+                # Do explosion sound
+                sound.explosion_sound()
             elif enemy.y + enemy.get_height() > HEIGHT:
                 lives -= 1
                 enemies.remove(enemy)
+                sound.explosion_sound()
+
 
         player.move_balls(-ball_vel, enemies)
 

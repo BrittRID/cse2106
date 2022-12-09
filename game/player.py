@@ -1,8 +1,12 @@
 import pygame
 from constants import *
 from robot import Robot
+from sound_service import sound_service
 
 WIDTH, HEIGHT = 750, 750
+
+sound = sound_service()
+
 
 class Player(Robot):
     """ The player character.
@@ -40,6 +44,7 @@ class Player(Robot):
                 for obj in objs:
                     if ball.collision(obj):
                         objs.remove(obj)
+                        sound.explosion_sound()
                         if ball in self.balls:
                             self.balls.remove(ball)
 
