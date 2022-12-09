@@ -32,5 +32,5 @@ root                    (project root folder)
 ---
 * Romel Fraatz
 * Cynthia Rawlings
-* Brit Ridley
+* Brittany Ridley
 * Anna Varner
